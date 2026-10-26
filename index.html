@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Sifa Fauziah</title>
+
+    <style>
+        /* RESET DAN PENGATURAN DASAR */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --biru: #78bce8;
+            --biru-tua: #28658d;
+            --biru-muda: #eaf6ff;
+            --putih: #ffffff;
+            --teks: #34495e;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #edf5fb;
+            color: var(--teks);
+            line-height: 1.7;
+            padding: 30px 15px;
+        }
+
+        /* KARTU UTAMA CV */
+        .cv-container {
+            max-width: 900px;
+            margin: auto;
+            background: var(--putih);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(40, 101, 141, 0.12);
+        }
+
+        /* BAGIAN HEADER */
+        .header {
+            background: linear-gradient(135deg, #bce5ff, #eaf6ff);
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 4px solid var(--biru);
+        }
+
+        /* FOTO FORMAL PERSEGI PANJANG */
+        .foto {
+            width: 150px;
+            height: 190px;
+            object-fit: cover;
+            object-position: center top;
+            border: 4px solid var(--putih);
+            border-radius: 0;
+            background: #dcecf7;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+            flex-shrink: 0;
+        }
+
+        .header-text h1 {
+            color: var(--biru-tua);
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .header-text p {
+            color: #52758f;
+            font-size: 16px;
+        }
+
+        .label {
+            display: inline-block;
+            margin-top: 12px;
+            background: var(--putih);
+            color: var(--biru-tua);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* ISI CV */
+        .content {
+            padding: 30px 35px;
+        }
+
+        .section {
+            margin-bottom: 27px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            color: var(--biru-tua);
+            border-bottom: 2px solid #d5ecfb;
+            padding-bottom: 7px;
+            margin-bottom: 14px;
+        }
+
+        .section h2 span {
+            margin-right: 8px;
+        }
+
+        /* INFORMASI PRIBADI */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table td {
+            padding: 7px 4px;
+            vertical-align: top;
+        }
+
+        .info-table td:first-child {
+            width: 145px;
+            font-weight: bold;
+            color: var(--biru-tua);
+        }
+
+        /* HOBI DAN KEAHLIAN */
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: var(--biru-muda);
+            color: var(--biru-tua);
+            padding: 7px 15px;
+            border-radius: 6px;
+            border-left: 3px solid var(--biru);
+        }
+
+        /* PENGALAMAN */
+        .experience {
+            background: #f7fbff;
+            border-left: 4px solid var(--biru);
+            padding: 14px 18px;
+            margin-bottom: 12px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .experience h3 {
+            color: var(--biru-tua);
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .experience p {
+            font-size: 14px;
+        }
+
+        /* BAGIAN PENUTUP */
+        .footer {
+            text-align: center;
+            background: var(--biru-muda);
+            color: var(--biru-tua);
+            padding: 16px;
+            font-size: 13px;
+        }
+
+        /* TAMPILAN HP */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px 8px;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 18px;
+                gap: 16px;
+            }
+
+            .foto {
+                width: 135px;
+                height: 175px;
+            }
+
+            .header-text h1 {
+                font-size: 26px;
+            }
+
+            .content {
+                padding: 24px 18px;
+            }
+
+            .info-table td {
+                display: block;
+                width: 100%;
+                padding: 3px 0;
+                overflow-wrap: anywhere;
+            }
+
+            .info-table td:first-child {
+                width: 100%;
+                padding-top: 9px;
+            }
+
+            .section h2 {
+                font-size: 18px;
+            }
+        }
+
+        /* PENGATURAN SAAT DICETAK */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .header,
+            .footer,
+            .tag,
+            .experience {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cv-container">
+
+        <!-- HEADER DAN FOTO -->
+        <header class="header">
+            <!-- Ganti photo-formal.jpg dengan nama file foto kamu -->
+            <img
+                src="photo-formal.jpg"
+                alt="Foto formal Sifa Fauziah"
+                class="foto"
+            >
+
+            <div class="header-text">
+                <h1>Sifa Fauziah</h1>
+                <p>Curriculum Vitae</p>
+                <p>Pelajar yang aktif, bertanggung jawab, dan mau terus belajar.</p>
+                <span class="label">Pelajar • Pengembangan Diri</span>
+            </div>
+        </header>
+
+        <!-- KONTEN UTAMA -->
+        <main class="content">
+
+            <!-- TENTANG SAYA -->
+            <section class="section">
+                <h2><span>✦</span> Tentang Saya</h2>
+                <p>
+                    Saya adalah seorang pelajar berusia 17 tahun yang memiliki
+                    semangat untuk belajar dan mengembangkan kemampuan diri.
+                    Saya senang bekerja sama dalam tim, mampu membantu mengatur
+                    acara, serta ingin memperoleh pengalaman baru melalui
+                    organisasi dan kegiatan sekolah.
+                </p>
+            </section>
+
+            <!-- INFORMASI PRIBADI -->
+            <section class="section">
+                <h2><span>✦</span> Informasi Pribadi</h2>
+
+                <table class="info-table">
+                    <tr>
+                        <td>Nama Lengkap</td>
+                        <td>: Sifa Fauziah</td>
+                    </tr>
+                    <tr>
+                        <td>Umur</td>
+                        <td>: 17 tahun</td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Lahir</td>
+                        <td>: 27 Mei 2009</td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td>
+                        <td>
+                            : Kp. Sadang Sari RT 01/RW 04,
+                            Kel. Andir, Kec. Baleendah,
+                            Kab. Bandung
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- HOBI -->
+            <section class="section">
+                <h2><span>✦</span> Hobi</h2>
+                <div class="tag-container">
+                    <span class="tag">Memasak</span>
+                    <span class="tag">Mendengarkan Musik</span>
+                </div>
+            </section>
+
+            <!-- PENGALAMAN ORGANISASI -->
+            <section class="section">
+                <h2><span>✦</span> Pengalaman Organisasi</h2>
+
+                <div class="experience">
+                    <h3>Paskibra</h3>
+                    <p>
+                        Pernah mengikuti kegiatan Paskibra sebagai pasukan
+                        berbaris. Kegiatan ini menjadi pengalaman dalam
+                        melatih kedisiplinan, kekompakan, dan tanggung jawab.
+                    </p>
+                </div>
+
+                <div class="experience">
+                    <h3>IRMA (Ikatan Remaja Masjid)</h3>
+                    <p>
+                        Saat ini aktif mengikuti organisasi IRMA untuk
+                        menambah pengalaman berorganisasi, belajar bekerja
+                        sama, dan berpartisipasi dalam kegiatan keagamaan.
+                    </p>
+                </div>
+            </section>
+
+            <!-- KEAHLIAN -->
+            <section class="section">
+                <h2><span>✦</span> Keahlian</h2>
+                <div class="tag-container">
+                    <span class="tag">Kerja Sama Tim</span>
+                    <span class="tag">Mengatur Acara</span>
+                    <span class="tag">Tanggung Jawab</span>
+                    <span class="tag">Kedisiplinan</span>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- PENUTUP -->
+        <footer class="footer">
+            Terus belajar, berkembang, dan menjadi pribadi yang lebih baik.
+        </footer>
+
+    </div>
+
+</body>
+</html>
